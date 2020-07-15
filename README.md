@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Smart Brain Web App
+Face Detection Web App created with PERN stack.<br>
+The hosted version can be found [HERE](https://smart-brain-karim.herokuapp.com/).
 
-## Available Scripts
+## Functionality
+Users can register, signin and upload an image (by entering a direct image link),
+and the app will display rectangles around all detected faces in the picture.
 
-In the project directory, you can run:
+## Tech Stack
+Front-end: React<br>
+Back-end: Node.js & Express.js<br>
+Database: PostgreSQL<br>
 
-### `npm start`
+## Frameworks
+1. Clarifai API
+2. bcrypt-nodejs
+3. Knex
+4. Pg
+5. Tachyons
+6. Serve
+7. Cors
+8. Express
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm run dev`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Backend API
+API Repo can be found [HERE](https://github.com/karimkhattaby/smart-brain-api)
 
-### `npm test`
+## Usage
+1. You can login using these credentials:
+- Email: `test@test.com`
+- Password: `test123`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Or you can Register using a fake email/password.<br><br>
+2. Afterwards, you need to enter a direct image link
+(right click on image and click on `Copy Image Address`)
 
-### `npm run build`
+## Notes
+1. The Web App uses SSL encryption through HTTPS protocol to transfer input data.
+2. Passwords are hashed once received by the backend.
+3. Despite 1 and 2, I'd still recommend using a fake/weak password to avoid any potential future attacks.
+4. Emails aren't verified, so you can use any email even if it's fake.
+5. Entered images URLs are NEVER stored in the database or API logs.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Troubleshooting
+1. If your image isn't working, make sure the image URL points directly to the image file (you might want to right click on the image and click on `Copy Image Address`).<br>
+If you are sure about the image, maybe the face detection API reached its 5000 images per month limit.<br>
+However, do check your browser console for any potential bad requests or errors, and raise an issue in case you find any.<br><br>
+2. Sometimes the server responds slow for signin/register requests, so please be patient.<br>
+However, do check your browser console for any potential bad requests or errors, and raise an issue in case you find any.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Hosted Version
+The latest version is deployed and hosted on Heroku. Check it out by clicking [HERE](https://smart-brain-karim.herokuapp.com/).
