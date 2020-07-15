@@ -20,6 +20,7 @@ Database: PostgreSQL<br>
 6. Serve
 7. Cors
 8. Express
+9. Nodemon
 
 ## Installation
 1. Clone this repo
