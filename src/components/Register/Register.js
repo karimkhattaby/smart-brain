@@ -23,7 +23,7 @@ class Register extends Component {
     };
 
     onSubmitRegister = () => {
-        fetch("http://localhost:3001/register", {
+        fetch(this.props.URL+"register", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({

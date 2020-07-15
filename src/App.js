@@ -1,4 +1,6 @@
 // @ts-nocheck
+
+// Importing Components
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
@@ -10,6 +12,11 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 
+// Instantiating the App's URL
+// TODO: Change URL and port number for Deployment/Development
+const URL = "https://fatidique-fromage-93783.herokuapp.com/";
+
+// Initializing Particles
 const particlesOptions = {
   particles: {
     number: {
@@ -22,6 +29,7 @@ const particlesOptions = {
   }
 };
 
+// Initializing the App's Initial State
 const initialState = {
   input: "",
   imageURL: "",
@@ -77,7 +85,7 @@ class App extends Component {
   onSubmit = () => {
     const { input } = this.state;
     this.setState({imageURL: input});
-    fetch("http://localhost:3001/imageurl", {
+    fetch(URL+"imageurl", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
@@ -87,7 +95,7 @@ class App extends Component {
     .then(response => response.json())
     .then((response) => {
       if (response) {
-        fetch("http://localhost:3001/image", {
+        fetch(URL+"image", {
           method: "PUT",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({
@@ -135,8 +143,8 @@ class App extends Component {
             </div>
           : (
             route === "signin"
-            ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+            ? <Signin URL={URL} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+            : <Register URL={URL} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
         }
       </div>
