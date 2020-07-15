@@ -19,7 +19,7 @@ class Signin extends Component {
     };
 
     onSubmitSignIn = () => {
-        fetch(this.props.URL+"/signin", {
+        fetch(this.props.URL+"signin", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
