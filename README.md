@@ -25,10 +25,14 @@ Database: PostgreSQL<br>
 ## Installation
 1. Clone this repo
 2. Run `npm install`
-3. Run `npm run dev`
+3. Change the URL in src/App.js to your own API backend.
+4. Run `npm run dev`
 
 ## Backend API
 API Repo can be found [HERE](https://github.com/karimkhattaby/smart-brain-api)
+
+## Frontend
+Browse to http://localhost:3000/, signin/register, and upload an image!
 
 ## Usage
 1. You can login using these credentials:
